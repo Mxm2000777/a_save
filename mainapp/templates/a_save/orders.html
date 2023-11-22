@@ -1,0 +1,58 @@
+{% extends lnk %}
+{% block content %}
+{% load static %}
+{% load tagslib %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сайт</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<div class="search">
+  <form action="#">
+      <input type="text"
+             placeholder="Искать услугу..."
+             name="search">
+      <button>
+          <i class="fa fa-search"
+             style="font-size: 12px;">
+          </i>
+      </button>
+  </form>
+</div>
+<div class="wrapper">
+  {% for k in lst %}
+  {% for j, v in k.items %}
+      <div class="caard" onclick ="location.href='order/{{ j }}'">
+        <div class="caard-banner">
+          <p class="category-tag psychology">{{ v.3 }}$</p>
+          <p class="otks">{{ v.5 | length }}</p>
+          <img class="banner-img" src={{ v.7 }} alt="">
+        </div>
+        <div class="caard-body">
+          {% for tag in v.4 %}
+          <a class="blog-hashtag">#{{ tag }}</a>
+          {% endfor %}
+          <h2 class="blog-title">{{ v.1 }}</h2>
+          <p class="blog-description">{{ v.2 }}</p>
+          <div class="card-profile">
+            <img class="profile-img" src= {{ v.0 | orderava }} alt ="">
+            <div class="card-profile-info">
+              <h3 class="profile-name">{{ v.8 }}</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  {% endfor %}
+</div>
+<script>
+  let counter = 0;
+  
+  document.getElementsByClassName("card")[0]        
+  .addEventListener('click', function (event) {
+            alert("SS")
+        });
+</script>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+{% block coo %}
+	<style>
+		body {
+			background-image: url({% static "images/bg.svg" %});
+			background-size: 100%;
+
+			overflow: hidden;
+
+		}
+	</style>
+{% endblock %}
+{% block content %}
+	<div style="display: flex">
+		<div class="col-5 px-5" style="height: 1000px; background-color: #FFFFFF">
+			<div style="display: flex; ">
+				<img src={% static "/images/logoreg.svg" %} class="mx-auto my-5">
+			</div>
+			<p style="text-align: center; margin-top: 20px; font-size: 25px ">{{ error }}</p>
+			<form method="POST">
+				
+				<p style="margin-top: 20px; ">Логин</p>
+				<input type="text" name="username" class="" placeholder="Логин">
+				<p style="margin-top: 20px; ">Пароль</p>
+				<input type="password" name="pswd1" id="password" placeholder="Пароль">
+				<i class="bi bi-eye-slash" id="togglePassword"></i>
+				<div class="form-check mt-5">
+					<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+					<label class="form-check-label" for="flexCheckDefault">
+						Оставить меня в системе
+					</label>
+				</div>
+				<button type="submit" class="btn rounded-pill col-12 mx-auto pt-3 text-center" style="background-color: #05D8E8">Войти</button>
+				<a href="reg" class="font p">Зарегистрироваться</a>
+				{% csrf_token %}
+			</form>
+		</div>
+	</div>
+	{% block buttons %}{% endblock %}
+
+
+	<script>
+		const togglePassword = document
+				.querySelector('#togglePassword');
+		const password = document.querySelector('#password');
+		togglePassword.addEventListener('click', () => {
+			const type = password
+					.getAttribute('type') === 'password' ?
+					'text' : 'password';
+			password.setAttribute('type', type);
+
+			this.classList.toggle('bi-eye');
+		});
+	</script>
+{% endblock  %}

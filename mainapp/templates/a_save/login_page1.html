@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+{{ name }}
+{{ error }}
+  <h1 class='c'>Войти</h1>
+    <form method="POST" class='c'>
+        <input type="text" name="username" required>
+        <br>
+        <input type='password' name='pswd1' required> 
+        <br>
+        <input type="submit" value="Отправить">
+        {% csrf_token %}
+    </form>
+    <button onclick='document.location="reg"'>Нету аккаунта? Регистрация</button>
+{% endblock %}

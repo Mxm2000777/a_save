@@ -1,0 +1,25 @@
+.header{
+	display: flex;
+	justify-content: space-between;
+	background-color: red;
+	padding: 12px;
+	align-items:center;
+}
+.links {
+	display: flex;
+	gap: 36px;
+}
+.links a {
+	text-decoration: none;
+	color: black;
+}
+.img
+.font{
+	color: #001A4C;
+}
+.blur{
+	background-image: url(bg.png);
+}
+.flex{
+	display: flex;
+}

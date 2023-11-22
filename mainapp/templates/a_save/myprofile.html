@@ -1,0 +1,5 @@
+{% extends "re_SELF/profile.html" %}
+{% load tagslib %}
+{% block op %}
+<button type="button" class="btn btn-primary" onclick ="location.href='//{% get_url request %}/mainapp/changeprofile'">Изменить профиль</button>
+{% endblock %}

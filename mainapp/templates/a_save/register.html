@@ -1,0 +1,19 @@
+{% extends "re_SELF/base.html" %}
+{% block content %}
+  <h1 class='c'>Регистрация</h1>
+    <form method="POST" class='c'>
+        эмеил <input type="email" name="email" required>
+        <br>
+        телефон<input type='phone' name='phone'>
+        <br>
+        юзерннейм<input type="text" name="username" required>
+        <br>
+        пароль1<input type='password' name='pswd1' required> 
+        <br>
+        пароль2<input type='text' name='pswd2'required>
+        <br>
+        город<input type="text" name="city" required>
+        <input type="submit" value="Отправить">
+        {% csrf_token %}
+    </form>
+{% endblock %}

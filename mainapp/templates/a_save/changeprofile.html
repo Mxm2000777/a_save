@@ -1,0 +1,12 @@
+{% extends "re_SELF/profile.html" %}
+{% block content %}
+<form method="POST" enctype='multipart/form-data'>
+  Новый никнейм<input type="text" name="new_username">
+  Новая аватарка<input type='file' name='new_ava'>
+  <a href="changeavatar"><i class="fa fa-edit" title="Linkedin" style="font-size: 30px; position: relative; top: 50px; left: -10px";></i></a>
+  стаый пароль<input type='password' name='old_pswd'> 
+  Новый пароль<input type='text' name='new_pswd'>
+  <button type="submit">upload</button>
+  {% csrf_token %}
+</form>
+{% endblock %}

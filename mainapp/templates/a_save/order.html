@@ -1,0 +1,21 @@
+{% extends lnk %}
+{% load tagslib %}
+{% load static %}
+{% block content %}
+
+<div class="chat" onclick ="location.href='//{% get_url request %}/mainapp/profile/{{ idd }}'">
+  Профиль
+</div>
+{% block otkbutton %}
+<input type="button" id="btn1" value={{ otk }} />
+<script>
+  var a = {{ ootk }}
+  document.getElementById('btn1').onclick = () => {
+    alert(a)
+    if (a == false){
+      window.location.href = '//{% get_url request %}/mainapp/otk/{{ idorder }}'; 
+    }
+  };
+</script>
+{% endblock %}
+{% endblock %}

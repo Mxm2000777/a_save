@@ -1,0 +1,15 @@
+{% extends "re_SELF/logged.html" %}
+{% block content %}
+  <h1>Зарегистрироваться как рабочий</h1>
+  <h2>привт {{ name }}</h2>
+    <form method="POST">
+        Описание ваших навыков: <input type='text' name='desc'>
+        <br>
+        Минимальная оплата за час работы: <input type="number" name="price" required>
+        <br>
+        Теги: <input type='text' name='tags'> 
+        <br>
+        <input type="submit" name ='r1' value="Отправить">
+        {% csrf_token %}
+    </form>
+{% endblock %}

@@ -1,0 +1,53 @@
+.header{
+	display: flex;
+	justify-content: space-between;
+	background-color: #D1F9FF;
+	padding: 12px;
+	align-items:center;
+	height: 70px;
+}
+
+
+.img
+.font{
+	color: #001A4C;
+}
+.blur{
+	background-image: url(img/imgtiksi.png);
+}
+.flex{
+	display: flex;
+}
+@font-face {
+	font-family: 'monst'; /*a name to be used later*/
+	src: url('fonts/monsterrat.ttf'); /*URL to font*/
+}
+a,p{
+	font-family: monst;
+	text-decoration: none;
+	font-weight: bold;
+}
+input[type="text"]
+{
+	font-family: monst;
+	text-decoration: none;
+	font-weight: bold;
+	border:none;
+	border-bottom: 1px solid #1890ff;
+	padding: 5px 10px;
+	outline: none;
+}
+input[type="password"]
+{
+	font-family: monst;
+	text-decoration: none;
+	font-weight: bold;
+	border:none;
+	border-bottom: 1px solid #1890ff;
+	padding: 5px 10px;
+	outline: none;
+}
+form i {
+	margin-left: -30px;
+	cursor: pointer;
+}
